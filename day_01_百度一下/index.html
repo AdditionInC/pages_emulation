@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度一下，你就知道</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div id="page">
+        <div id="outside-wrapper">
+            <header>
+                <div id="header-left-list">
+                    <div class="header-left-list-name" v-for="item in headerLeftList" @click="goHref(item.href)"> {{ item.name }} </div>
+                </div>
+                <div id="header-right-list">
+                    <div id="set-title">设置</div>
+                    <div id="login-btn">登录</div>
+                </div>
+            </header>
+            <div id="center-container"></div>
+            <footer></footer>
+        </div>
+    </div>
+</body>
+    <script type="module">
+        let vue = new Vue({
+            el: '#page',
+            data: {
+                headerLeftList: headerLeftList
+            },
+            methods:{
+                goHref(href) {
+                    window.open(href,'_blank')
+                }
+            }
+        })
+    </script>
+</html>
