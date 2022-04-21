@@ -15,12 +15,43 @@
                     <div class="header-left-list-name" v-for="item in headerLeftList" @click="goHref(item.href)"> {{ item.name }} </div>
                 </div>
                 <div id="header-right-list">
-                    <div id="set-title">设置</div>
-                    <div id="login-btn">登录</div>
+                    <div id="set-title"  @mouseleave="closeShowSetDropList" @mouseenter="showDropList = true">设置</div>
+                    <div v-if="inDropList || showDropList" @mouseleave="closeInDropList" @mouseenter="inDropList = true"  id="set-drop-list">
+                        <ul>
+                            <li class="drop-list-item">搜索设置</li>
+                            <li class="drop-list-item">高级搜索</li>
+                            <li class="drop-list-item">关闭预测</li>
+                            <li class="drop-list-item">隐私设置</li>
+                            <li class="drop-list-item">关闭热搜</li>
+                        </ul>
+                    </div>
+                    <button id="login-btn">登录</button>
                 </div>
             </header>
-            <div id="center-container"></div>
-            <footer></footer>
+            <div id="center-container">
+                <div id="icon-container"><img id="baidu-icon" src="img/baidu-icon.png" alt="百度一下"></div>
+                <div id="search-container">
+                    <input id="search-input" type="text" >
+                    <span id="search-icon"><img src="img/camera.png"></span>
+                    <div id="search-btn">百度一下</div>
+                </div>
+                <div id="baidu-hot">
+                    <div id="hot-text">百度热搜 ></div>
+                    <div id="change-container">
+                        <img src="img/change.png" alt="">
+                        换一换
+                    </div>
+                </div>
+                <div id="hot-list">
+                    <div class="hot-list-item" v-for="item in hotList">
+                        <div class="number">{{ item.number }}</div>
+                        <div class="text">{{ item.text }}</div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                关于百度About Baidu使用百度前必读帮助中心京公网安备11000002000001号京ICP证030173号©2022 Baidu 互联网药品信息服务资格证书 (京)-经营性-2017-0020信息网络传播视听节目许可证 0110516
+            </footer>
         </div>
     </div>
 </body>
@@ -28,13 +59,27 @@
         let vue = new Vue({
             el: '#page',
             data: {
-                headerLeftList: headerLeftList
+                headerLeftList: headerLeftList,
+                showDropList: false,
+                inDropList: false,
+                hotList: hotList
             },
             methods:{
                 goHref(href) {
                     window.open(href,'_blank')
+                },
+                closeShowSetDropList() {
+                    setTimeout(()=>{
+                        this.showDropList = false
+                    },200)
+                },
+                closeInDropList() {
+                    setTimeout(()=>{
+                        this.inDropList = false
+                    },200)
                 }
-            }
+            },
+
         })
     </script>
 </html>

@@ -5,6 +5,14 @@ body,html {
 body{
  margin: 0;
 }
+ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+}
+li{
+ margin: 5px;
+}
 
 /* 布局 */
 #outside-wrapper {
@@ -51,15 +59,159 @@ header {
  display: inline-block;
  margin-top: 19px;
 }
+#set-title:hover {
+ color: #315efb;
+ cursor: pointer;
+}
 #login-btn {
- display: inline-block;
- margin-left: 32px;
+ margin-top: 19px;
+ margin-left: 28px;
+ font: 13px/23px Arial,sans-serif;
+ background-color: #4e6ef2;
+ height: 24px;
  width: 48px;
- text-align: center;
- vertical-align: middle;
+ line-height: 24px;
+ display: inline-block;
  outline: 0;
  border: 0;
- color: white;
- background-color: #4e6ef2;
+ color: #fff!important;
  border-radius: 6px;
+ padding: 0;
+ cursor: pointer;
+ position: relative;
+}
+#set-drop-list {
+ position: absolute;
+ border-radius: 12px;
+ top: 48px;
+ width: 90px;
+ right: 75px;
+ text-align: center;
+ -webkit-box-shadow: 0 2px 10px 0 rgb(0 0 0 / 15%);
+}
+.drop-list-item:hover {
+ color: #315efb;
+ cursor: pointer;
+}
+#center-container {
+ background-color: white;
+ height: 100%;
+ margin-top: 50px;
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+}
+#icon-container {
+ width: 100%;
+ display: flex;
+ justify-content: center;
+}
+#baidu-icon {
+ height: 129px;
+ width: 270px;
+ display: block;
+}
+#search-container {
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ margin-top: 20px;
+}
+#search-input {
+ width: 512px;
+ height: 16px;
+ padding: 12px 16px;
+ font-size: 16px;
+ margin: 0;
+ outline: 0;
+ box-shadow: none;
+ border-radius: 10px 0 0 10px;
+ border: 2px solid #c4c7ce;
+ background: #fff;
+ color: #222;
+ overflow: hidden;
+ box-sizing: content-box;
+}
+#search-btn {
+ cursor: pointer;
+ width: 108px;
+ height: 44px;
+ line-height: 45px;
+ line-height: 44px\9;
+ padding: 0;
+ background-color: #4e6ef2;
+ border-radius: 0 10px 10px 0;
+ font-size: 17px;
+ color: #fff;
+ box-shadow: none;
+ font-weight: 400;
+ border: none;
+ outline: 0;
+ margin-left: -52px;
+ text-align: center;
+}
+#search-icon{
+ width: 50px;
+ height: 50px;
+}
+#search-icon >img {
+ width: 20px;
+ height: 16px;
+ position: relative;
+ padding-left: -40px;
+ margin-top: 15px;
+}
+#baidu-hot {
+ width: 100%;
+ margin-top: 40px;
+}
+#hot-text {
+ padding-left: 330px;
+ font-weight: bold;
+ font-family: 幼圆, serif;
+ font-size: 15px;
+ display: inline-block;
+}
+#change-container {
+ display: inline-block;
+ padding-left: 510px;
+ font-size: 14px;
+ color: #706a6a;
+}
+#change-container >img{
+ width: 15px;
+ height: 15px;
+}
+#hot-list {
+ margin-top: 15px;
+ width: 650px;
+ margin-left: -10px;
+ display: flex;
+ justify-content: space-between;
+ flex-wrap: wrap;
+}
+
+.hot-list-item {
+ height: 30px;
+ width: 45%;
+}
+.number {
+ width: 30px;
+ height: 30px;
+ text-align: center;
+ font-size: 17px;
+ display: inline-block;
+ color: gray;
+}
+.text {
+ display: inline-block;
+ color: #2d2b2b;
+}
+footer{
+ width: 100%;
+ text-align: center;
+ background-color: white;
+ color: gray;
+ position: absolute;
+ bottom: 10px;
 }
